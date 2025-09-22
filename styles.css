@@ -54,7 +54,6 @@ body {
     gap: 8px;
     line-height: 1;
     margin-bottom: 4px;
-    /* Font styles are now controlled by inner spans */
 }
 
 .product-title .brand-name {
@@ -73,9 +72,9 @@ body {
     font-size: 26px;
     font-weight: 400;
     color: #6DA352;
-    line-height: 1.4;
     margin-top: 0;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
 .product-details {
@@ -84,11 +83,14 @@ body {
     color: #8D8D8D;
 }
 
+.product-details .pill-count {
+    margin-left: 20px;
+}
+
 .section-title {
     font-size: 34px;
     font-weight: 700;
     margin-bottom: 16px;
-    /* Word break properties are now in the global * selector */
 }
 
 .brown-title { color: #A48B61; }
@@ -99,7 +101,6 @@ body {
     font-weight: 400;
     color: #666666;
     line-height: 1.7;
-    /* Word break properties are now in the global * selector */
 }
 
 .large-text {
@@ -156,7 +157,7 @@ section {
     max-width: 580px;
     width: 100%;
     height: auto;
-    margin: 0 auto 20px; /* Consolidates the margin change */
+    margin: 0 auto 20px;
 }
 
 .features-grid {
@@ -164,6 +165,7 @@ section {
     display: flex;
     justify-content: space-around;
     gap: 10px;
+    align-items: flex-start; /* Key for vertical alignment */
 }
 
 .feature-item {
@@ -175,13 +177,37 @@ section {
     gap: 12px;
 }
 
+/* --- Icon Styles (Consolidated) --- */
+.feature-item .material-symbols-outlined,
 .feature-item i {
-    font-size: 40px;
-    color: #B8B8B8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
 }
 
-.problem-section .feature-item i { color: #A48B61; }
-.solution-section .feature-item i { color: #007C8E; }
+.feature-item .material-symbols-outlined {
+    font-size: 56px;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+.feature-item .fa-solid {
+    font-size: 56px;
+}
+
+.feature-item .fa-bone {
+    font-size: 48px;
+}
+
+.problem-section .feature-item .material-symbols-outlined,
+.problem-section .feature-item i {
+    color: #A48B61;
+}
+
+.solution-section .feature-item .material-symbols-outlined,
+.solution-section .feature-item i {
+    color: #007C8E;
+}
 
 .cta-button {
     display: inline-block;
@@ -253,7 +279,7 @@ section {
         font-weight: 500;
         line-height: 1.7;
     }
-    .problem-intro .section-text { /* Orphan word fix */
+    .problem-section .section-text { /* Orphan word fix */
         font-size: 17.5px;
         padding: 0 5px;
     }
